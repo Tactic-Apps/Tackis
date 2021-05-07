@@ -1,42 +1,39 @@
-import * as React from "react"
-import PropTypes from "prop-types"
+import React from "react"
 import { Link } from "gatsby"
+import FacebookIcon from "../assets/icons/facebook.svg"
+import Twitter from "../assets/icons/twitter.svg"
+import LinkedIn from "../assets/icons/linkedin.svg"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+const Header = () => (
+  <header className="bg-gray p-2 border-b-2 border-gray-light text-sm text-white">
+    <div className="container flex md:flex-wrap flex-col md:flex-row items-center">
+      <div className="md:mr-auto">
+        <a href="tel:8002147435">
+          <span className="text-primary">Call Now At: </span>
+          800.214.7435
+        </a>
+      </div>
+      <div className="flex items-center mt-4 md:mt-0">
+        <ul className="flex">
+          <li className="mr-4">
+            <Link to="/myaccount" className="hover:text-primary">
+              My Account
+            </Link>
+          </li>
+          <li className="mr-4">
+            <Link to="/register" className="hover:text-primary">
+              Register
+            </Link>
+          </li>
+        </ul>
+        <div className="flex border-l-2 border-white pl-4">
+          <FacebookIcon className="w-6 h-6 fill-current mr-3 hover:text-primary hover:cursor-pointer" />
+          <Twitter className="w-6 h-6 fill-current mr-3 hover:text-primary hover:cursor-pointer" />
+          <LinkedIn className="w-6 h-6 fill-current mr-3 hover:text-primary hover:cursor-pointer" />
+        </div>
+      </div>
     </div>
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

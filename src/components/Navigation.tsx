@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Navigation = () => {
   const [showMobileLinks, setShowMobileLinks] = useState(false)
@@ -11,23 +12,34 @@ const Navigation = () => {
     <nav className="p-5 w-full bg-gray shadow-sm border-b ">
       <div className="container flex flex-wrap items-center ">
         <Link to="/" className="mr-auto">
-          <img
-            src="http://acmelogos.com/images/logo-1.svg"
-            alt="ACME"
-            width="120"
+          <StaticImage
+            src="../assets/images/nav-logo.png"
+            alt="Tackos Logo"
+            placeholder="blurred"
+            layout="fixed"
+            width={140}
+            height={40}
           />
         </Link>
         <div className="flex md:hidden">
           <button onClick={toggleMobileLinks}>
-            <img
+            <StaticImage
+              src="../assets/images/burger-menu.png"
+              alt="Menu Open"
+              placeholder="blurred"
+              layout="fixed"
+              width={40}
+              height={40}
               className={showMobileLinks ? "hidden" : "block"}
-              src="https://img.icons8.com/fluent-systems-regular/2x/menu-squared-2.png"
-              style={{ width: "40", height: "40" }}
             />
-            <img
+            <StaticImage
+              src="../assets/images/close-window.png"
+              alt="Menu Open"
+              placeholder="blurred"
+              layout="fixed"
+              width={40}
+              height={40}
               className={showMobileLinks ? "block" : "hidden"}
-              src="https://img.icons8.com/fluent-systems-regular/2x/close-window.png"
-              style={{ width: "40", height: "40" }}
             />
           </button>
         </div>
@@ -37,25 +49,55 @@ const Navigation = () => {
           }`}
         >
           <li
-            className={`md:inline-block px-3 pb-3 pt-5 md:p-2 border-b-2 border-blue-900 md:border-none ${
+            className={`md:inline-block p-3 pb-3 pt-5 md:py-2 md:pr-3 border-b-2 border-gray-light md:border-none ${
               showMobileLinks ? "block" : "hidden"
             }`}
           >
-            <Link to="/login" className="hover:text-blue-500">
-              Login
+            <Link to="/services/internet" className="hover:text-primary">
+              Internet
             </Link>
           </li>
           <li
-            className={`md:inline-block p-3 md:p-2 border-b-2 border-blue-900 md:border-none ${
+            className={`md:inline-block p-3 md:py-2 md:pr-3 border-b-2 border-gray-light md:border-none ${
               showMobileLinks ? "block" : "hidden"
             }`}
           >
-            <Link to="/register" className="hover:text-blue-500">
-              Register
+            <Link to="/services/streaming" className="hover:text-primary">
+              Streaming
+            </Link>
+          </li>
+          <li
+            className={`md:inline-block p-3 md:py-2 md:pr-3 border-b-2 border-gray-light md:border-none ${
+              showMobileLinks ? "block" : "hidden"
+            }`}
+          >
+            <Link to="/services/streaming" className="hover:text-primary">
+              About
+            </Link>
+          </li>
+          <li
+            className={`md:inline-block p-3 md:py-2 md:pr-3 border-b-2 border-gray-light md:border-none ${
+              showMobileLinks ? "block" : "hidden"
+            }`}
+          >
+            <Link to="/services/streaming" className="hover:text-primary">
+              Contact
             </Link>
           </li>
         </ul>
-        <button className="btn btn-ghost">Get Fiber</button>
+        <div
+          className={`transform md:transform-none transition-all w-full md:w-auto ${
+            showMobileLinks ? "translate-y-0" : "-translate-y-56"
+          }`}
+        >
+          <button
+            className={`btn btn-ghost mt-5 w-full md:w-auto md:mt-0 md:ml-3 md:inline-block ${
+              showMobileLinks ? "" : "hidden"
+            }`}
+          >
+            Get Fiber
+          </button>
+        </div>
       </div>
     </nav>
   )

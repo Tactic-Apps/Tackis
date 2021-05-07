@@ -50,7 +50,7 @@ module.exports = {
       opacity: ["disabled"],
       backgroundColor: ["disabled"],
       textColor: ["disabled"],
-      cursor: ["disabled"],
+      cursor: ["disabled", "hover"],
     },
   },
   plugins: [
