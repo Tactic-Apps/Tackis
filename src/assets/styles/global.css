@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-7xl font-bold;
+  }
+  h2 {
+    @apply text-4xl font-bold;
+  }
+  h3 {
+    @apply text-2xl font-bold;
+  }
+  h4 {
+    @apply text-2xl font-bold;
+  }
+  body {
+    @apply text-gray;
+  }
+  p {
+    @apply text-gray-light font-paragraph;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply py-3 px-6 text-sm font-bold rounded-3xl  transition-colors duration-100 font-paragraph focus:outline-none;
+  }
+
+  /*These primary colors were created in the theme in tailwind.config.js*/
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-secondary focus:ring-primary-light disabled:bg-white disabled:text-primary disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-primary focus:ring-secondary-light disabled:bg-white disabled:text-secondary disabled:cursor-not-allowed;
+  }
+  .btn-warning {
+    @apply bg-warning text-white hover:bg-warning-dark focus:ring-warning-light disabled:bg-white disabled:text-warning disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply bg-transparent text-primary border-2 border-primary hover:bg-primary hover:text-white focus:ring-primary-light disabled:bg-white disabled:text-primary disabled:cursor-not-allowed;
+  }
+}
