@@ -43,6 +43,9 @@ module.exports = {
           dark: "#7B0025",
         },
       },
+      height: {
+        hero: "80vh",
+      },
     },
   },
   variants: {

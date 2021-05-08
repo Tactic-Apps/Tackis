@@ -26,7 +26,7 @@ const Header = () => (
             </Link>
           </li>
         </ul>
-        <div className="flex border-l-2 border-white pl-4">
+        <div className="flex border-l-2 border-gray-light pl-4">
           <FacebookIcon className="w-6 h-6 fill-current mr-3 hover:text-primary hover:cursor-pointer" />
           <Twitter className="w-6 h-6 fill-current mr-3 hover:text-primary hover:cursor-pointer" />
           <LinkedIn className="w-6 h-6 fill-current mr-3 hover:text-primary hover:cursor-pointer" />

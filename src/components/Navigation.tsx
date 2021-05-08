@@ -9,7 +9,7 @@ const Navigation = () => {
     setShowMobileLinks(prevState => !prevState)
   }
   return (
-    <nav className="p-5 w-full bg-gray shadow-sm border-b ">
+    <nav className="p-5 w-full bg-gray">
       <div className="container flex flex-wrap items-center ">
         <Link to="/" className="mr-auto">
           <StaticImage
