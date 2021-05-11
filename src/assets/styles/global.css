@@ -16,7 +16,7 @@
     @apply text-2xl font-bold;
   }
   body {
-    @apply text-gray;
+    @apply text-gray bg-gray-100;
   }
   p {
     @apply text-gray-light font-paragraph;

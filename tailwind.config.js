@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       container: {
         center: true,
+        padding: "2rem",
       },
       fontFamily: {
         sans: ["Nunito", ...defaultTheme.fontFamily.sans], //Adding a font to the font-sans class that is defined in tailwindStyles.css
@@ -44,7 +45,10 @@ module.exports = {
         },
       },
       height: {
-        hero: "80vh",
+        hero: "88vh",
+      },
+      maxWidth: {
+        "1/2": "50%",
       },
     },
   },
