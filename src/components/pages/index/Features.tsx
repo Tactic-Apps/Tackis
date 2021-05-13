@@ -12,7 +12,7 @@ const Features = () => {
             We provide fiber internet and TV streaming services to Austin Texas
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-items-center gap-10 text-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-items-center gap-16 text-center">
           <div className="relative overflow-hidden bg-white shadow-lg p-8">
             <InternetIcon className="absolute top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4 w-64 h-64 fill-current text-primary opacity-5" />
             <InternetIcon className="fill-current text-primary m-auto w-20 h-20 pb-5" />

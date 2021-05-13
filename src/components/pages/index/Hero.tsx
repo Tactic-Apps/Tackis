@@ -5,7 +5,7 @@ import Wave from "../../../assets/icons/wave.svg"
 
 const Hero = () => {
   return (
-    <section id="hero-banner" className="relative w-100 h-hero overflow-hidden">
+    <section id="hero-banner" className="relative h-hero overflow-hidden">
       <StaticImage
         src="../../assets/images/hero.jpg"
         alt="Hero image"
@@ -30,15 +30,14 @@ const Hero = () => {
             <span className="text-2xl font-bold border-b-2 border-secondary">
               NO HIDDEN FEES. NO CONTRACTS. LIFETIME PRICE.
             </span>
-            <br/>
+            <br />
             <button className="btn btn-primary mt-10">
               Sign Up For Fiber Internet
             </button>
           </div>
         </div>
       </div>
-      <Wave className="absolute bottom-0 left-0 w-full"
-      />
+      <Wave className="absolute bottom-0 left-0 w-full" />
     </section>
   )
 }
