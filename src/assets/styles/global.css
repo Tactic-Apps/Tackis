@@ -45,3 +45,9 @@
     @apply bg-transparent text-white border-2 border-white hover:bg-secondary hover:text-gray focus:ring-secondary-light disabled:bg-white disabled:text-secondary disabled:cursor-not-allowed;
   }
 }
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 2rem !important;
+  color: #5bc500 !important;
+}

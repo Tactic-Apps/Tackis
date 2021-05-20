@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section id="hero-banner" className="relative h-hero overflow-hidden">
       <StaticImage
-        src="../../assets/images/hero.jpg"
+        src="../../../assets/images/hero.jpg"
         alt="Hero image"
         placeholder="blurred"
         layout="fullWidth"
