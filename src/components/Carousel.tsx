@@ -48,16 +48,21 @@ export type Settings = {
   dots?: boolean
   /** Responsive settings to adjust number of slides to show based on Tailwind v2 breakpoints. Must be ordered from smallest to largest breakpoints */
   responsive?: ResponsiveProperties[]
-  /** This Carousel requires at least 2 HTML elements */
-  children?: React.ReactNodeArray
 }
+
+type ChildrenProp = {
+  /** This Carousel requires at least 2 HTML elements */
+  children: React.ReactNodeArray
+}
+
+type Props = ChildrenProp & Settings
 
 const Carousel = ({
   slidesToShow = 1,
   dots = true,
   responsive,
   children,
-}: Settings): React.ReactElement => {
+}: Props): React.ReactElement => {
   // State for radio button checked
   const [checked, setChecked] = useState("carousel-1")
   // State for window width in pixels received from custom hook
@@ -86,35 +91,35 @@ const Carousel = ({
   }
 
   // Initialize the final slides and dots values based on both the standard and responsive settings
-  let totalSlidesToShow = slidesToShow
-  let totalDots = dots
+  let responsiveSlidesToShow = slidesToShow
+  let responsiveDots = children.length / slidesToShow === 1 ? false : dots
 
-  // Loop through the responsive settings array and set the slidesToShow and dots display according to tailwind breakpoints
+  // Loop through the tailwind breakpoints array and set the responsiveSlidesToShow and responsiveDots display according to tailwind breakpoints
   responsive?.forEach(settings => {
     for (let key in tailwindBreakpoints) {
       if (settings.breakpoint === key) {
         if (windowWidth >= tailwindBreakpoints[key]) {
-          totalSlidesToShow = settings.slidesToShow
-          totalDots = settings.dots
+          responsiveSlidesToShow = settings.slidesToShow
+          responsiveDots =
+            children.length / responsiveSlidesToShow === 1
+              ? false
+              : settings.dots
           break
         }
       }
     }
   })
 
-  // Create an array of arrays based on the amount of HTML elements that are passed as children.
-  let slideContent = [...Array(children.length)].map(() =>
-    Array(children.length)
-  )
+  // Create an array of arrays based on the amount of HTML elements that are passed as children. Example 4 children divs will create [[],[],[],[]]
+  let slideContent = [...Array(children.length)].map(() => Array())
 
   // Fill the slideContent array based on the quantity of HTML elements and how many of them to show per slide
-  let k = 0
   children.forEach((child, i) => {
-    for (let j = 1; j <= children.length / totalSlidesToShow; j++) {
-      if (i < totalSlidesToShow * j) {
-        slideContent[k].push(child)
+    for (let j = 1; j <= children.length; j++) {
+      if (i < responsiveSlidesToShow * j) {
+        slideContent[j - 1].push(child)
         break
-      } else k++
+      }
     }
   })
 
@@ -127,16 +132,24 @@ const Carousel = ({
     setTouchEnd(e.targetTouches[0].clientX)
   }
 
-  // When the touch ends then evaluate the touch start and end then do something depending on the direction
+  // When the touch ends then evaluate the touch start and end then do something depending on the direction. Reduce the number from 150 to 75 for higher sensitivity. Touch is disabled when there's only one slide screen.
   const handleTouchEnd = (i: number) => {
-    if (touchStart - touchEnd > 150) {
-      // do your stuff here for left swipe
-      setChecked(`carousel-${i < 1 ? children.length : i}`)
-    }
+    if (children.length / responsiveSlidesToShow !== 1) {
+      if (touchStart - touchEnd > 150) {
+        // do your stuff here for left swipe
+        setChecked(
+          `carousel-${i < 1 ? children.length / responsiveSlidesToShow : i}`
+        )
+      }
 
-    if (touchStart - touchEnd < -150) {
-      // do your stuff here for right swipe
-      setChecked(`carousel-${i + 1 === children.length ? 1 : i + 2}`)
+      if (touchStart - touchEnd < -150) {
+        // do your stuff here for right swipe
+        setChecked(
+          `carousel-${
+            i + 1 === children.length / responsiveSlidesToShow ? 1 : i + 2
+          }`
+        )
+      }
     }
   }
 
@@ -144,9 +157,10 @@ const Carousel = ({
     bullets = []
 
   // Create the slides by inserting the slideContent above and also create the optional bullets
-  for (let i = 0; i < children.length / totalSlidesToShow; i++) {
+  for (let i = 0; i < children.length / responsiveSlidesToShow; i++) {
     slides.push(
-      <>
+      <React.Fragment key={Math.random()}>
+        {/* This is the hidden radio input that allows the buttons and bullets to work */}
         <input
           className="carousel-open hidden"
           type="radio"
@@ -154,40 +168,64 @@ const Carousel = ({
           name="carousel"
           aria-hidden="true"
           hidden
-          checked={checked === `carousel-${i + 1}` ? true : false}
+          defaultChecked={checked === `carousel-${i + 1}` ? true : false}
         />
+        {/* This is the slide content div that also enables mobile touch on the slides */}
         <div
-          className="carousel-item absolute opacity-0"
+          className="carousel-item flex absolute opacity-0"
           onTouchStart={touchStartEvent => handleTouchStart(touchStartEvent)}
           onTouchMove={touchMoveEvent => handleTouchMove(touchMoveEvent)}
           onTouchEnd={() => handleTouchEnd(i)}
         >
-          {slideContent[i]}
+          {slideContent[i].map(content => (
+            <div key={Math.random()} className="carousel-slideContent flex-1">
+              {content}
+            </div>
+          ))}
         </div>
-        <button
-          className={`prev control-${
-            i + 1
-          } w-10 h-10 md:ml-0 absolute cursor-pointer hidden text-3xl font-bold text-white hover:text-white rounded-full bg-primary hover:bg-primary-dark leading-tight text-center z-10 inset-y-0 -left-14 my-auto focus:outline-none`}
-          onClick={() => setChecked(`carousel-${i < 1 ? children.length : i}`)}
-        >
-          ‹
-        </button>
-        <button
-          className={`next control-${
-            i + 1
-          } w-10 h-10 mr-2 mr-10 absolute cursor-pointer hidden text-3xl font-bold text-white hover:text-white rounded-full bg-primary hover:bg-primary-dark leading-tight text-center z-10 inset-y-0 -right-24 my-auto focus:outline-none`}
-          onClick={() =>
-            setChecked(`carousel-${i + 1 === children.length ? 1 : i + 2}`)
-          }
-        >
-          ›
-        </button>
-      </>
+        {/* Buttons are rendered when more than one slide screen is available */}
+        {children.length / responsiveSlidesToShow !== 1 && (
+          <>
+            <button
+              className={`prev control-${
+                i + 1
+              } w-10 h-10 md:ml-0 absolute cursor-pointer hidden text-3xl font-bold text-white hover:text-white rounded-full bg-primary hover:bg-primary-dark leading-tight text-center z-10 inset-y-0 -left-14 my-auto focus:outline-none`}
+              onClick={() =>
+                setChecked(
+                  `carousel-${
+                    i < 1 ? children.length / responsiveSlidesToShow : i
+                  }`
+                )
+              }
+            >
+              ‹
+            </button>
+            <button
+              className={`next control-${
+                i + 1
+              } w-10 h-10 mr-10 absolute cursor-pointer hidden text-3xl font-bold text-white hover:text-white rounded-full bg-primary hover:bg-primary-dark leading-tight text-center z-10 inset-y-0 -right-24 my-auto focus:outline-none`}
+              onClick={() =>
+                setChecked(
+                  `carousel-${
+                    i + 1 === children.length / responsiveSlidesToShow
+                      ? 1
+                      : i + 2
+                  }`
+                )
+              }
+            >
+              ›
+            </button>
+          </>
+        )}
+      </React.Fragment>
     )
-
-    totalDots &&
+    {
+      /* Bullets are rendered conditionally based on whether dots being set to true or false */
+    }
+    responsiveDots &&
       bullets.push(
-        <li className="inline-block mr-3">
+        <li className="inline-block mr-3" key={Math.random()}>
           <button
             className="carousel-bullet cursor-pointer block text-4xl text-gray hover:text-primary-dark focus:outline-none"
             onClick={() => setChecked(`carousel-${i + 1}`)}
@@ -199,12 +237,12 @@ const Carousel = ({
   }
 
   return (
-    <div className="carousel relative shadow-2xl bg-white">
-      <div className="carousel-inner relative w-full">
-        {slides}
-        {/* <!-- Add additional indicators for each slide--> */}
-
-        {totalDots && <ol className="carousel-indicators">{bullets}</ol>}
+    <div className="container px-16 md:px-24 py-20">
+      <div className="carousel relative">
+        <div className="carousel-inner relative w-full">
+          {slides}
+          {responsiveDots && <ol className="carousel-indicators">{bullets}</ol>}
+        </div>
       </div>
     </div>
   )
