@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Tackos`,
-    description: `Tackos is a Fiber Internet provider in Austin Texas with fast speeds and predictable billing.`,
+    title: `Tackis`,
+    description: `Tackis is a Fiber Internet provider in Austin Texas with fast speeds and predictable billing.`,
     author: `@tacticapps`,
   },
   plugins: [
@@ -20,8 +20,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Tackos`,
-        short_name: `Tackos`,
+        name: `Tackis`,
+        short_name: `Tackis`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#5bc500`,

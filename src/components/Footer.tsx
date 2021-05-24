@@ -12,8 +12,8 @@ const Footer = () => {
         <div>
           <Link to="/">
             <StaticImage
-              src="../assets/images/nav-logo.png"
-              alt="Tackos Logo"
+              src="../assets/images/logo.png"
+              alt="Tackis Logo"
               placeholder="blurred"
               layout="fixed"
               width={140}
@@ -95,7 +95,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="text-sm border-t border-gray-light mt-20 text-white text-center pt-6">
-        © Copyright Tackos {new Date().getFullYear()}. All Rights Reserved.
+        © Copyright Tackis {new Date().getFullYear()}. All Rights Reserved.
       </p>
     </section>
   )

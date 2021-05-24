@@ -13,8 +13,8 @@ const Navigation = () => {
       <div className="container flex flex-wrap items-center ">
         <Link to="/" className="mr-auto">
           <StaticImage
-            src="../assets/images/nav-logo.png"
-            alt="Tackos Logo"
+            src="../assets/images/logo.png"
+            alt="Tackis Logo"
             placeholder="blurred"
             layout="fixed"
             width={140}

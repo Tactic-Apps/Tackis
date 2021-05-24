@@ -10,7 +10,7 @@ const Features = () => {
       <div className="container my-24">
         <div className="text-center m-auto mb-16 max-w-prose">
           <InternetIcon className="fill-current text-primary-dark m-auto w-7 h-7 bg-primary-light rounded-lg p-1" />
-          <p className="text-primary pt-2 pb-3">Tackos ISP Features</p>
+          <p className="text-primary pt-2 pb-3">Tackis ISP Features</p>
           <h2>
             We provide fiber internet and TV streaming services to Austin Texas
           </h2>
@@ -41,7 +41,7 @@ const Features = () => {
             <FingerTapIcon className="fill-current text-primary m-auto w-20 h-20 pb-5" />
             <h3 className="mb-5 capitalize">Easy Billing</h3>
             <p className="mb-5">
-              With Tackos you get straight forward billing with no contracts, no
+              With Tackis you get straight forward billing with no contracts, no
               hidden fees and a lifetime price guarantee.
             </p>
             <button className="btn btn-primary">Learn More</button>

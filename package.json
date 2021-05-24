@@ -1,7 +1,7 @@
 {
-  "name": "Tackos",
+  "name": "Tackis",
   "private": true,
-  "description": "Tackos Fiber Internet",
+  "description": "Tackis Fiber Internet",
   "version": "0.1.0",
   "author": "Ray Bernard",
   "dependencies": {

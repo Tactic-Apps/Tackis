@@ -11,7 +11,7 @@ const Pricing = () => {
     <section id="Pricing" className="py-24">
       <div className="text-center m-auto mb-16 max-w-prose">
         <PriceTagIcon className="fill-current text-primary-dark m-auto w-7 h-7 bg-primary-light rounded-lg p-1" />
-        <p className="text-primary pt-2 pb-3">Tackos Internet Pricing</p>
+        <p className="text-primary pt-2 pb-3">Tackis Internet Pricing</p>
         <h2>Discover our simple billing plans</h2>
       </div>
       <div className="container grid grid-cols-1 md:grid-cols-3 gap-16">

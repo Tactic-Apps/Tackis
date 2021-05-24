@@ -18,7 +18,7 @@ const Hero = () => {
           <div className="col-span-2 xl:col-span-1 text-white">
             <div className="flex items-center pb-4">
               <InternetIcon className="text-secondary inline-block fill-current h-6 w-6 mr-1" />
-              <p className="text-white">Tackos Fiber Internet</p>
+              <p className="text-white">Tackis Fiber Internet</p>
             </div>
             <h1 className="capitalize mb-3">
               Built for <span className="text-primary">extreme</span> speeds
