@@ -89,8 +89,8 @@ const Testimonials = () => {
     },
   ]
   return (
-    <section id="Testimonials" className="bg-white py-16">
-      <div className="text-center m-auto max-w-prose">
+    <section id="Testimonials" className="bg-white py-24">
+      <div className="text-center m-auto max-w-prose mb-16">
         <MegaphoneIcon className="fill-current text-primary-dark m-auto w-7 h-7 bg-primary-light rounded-lg p-1" />
         <p className="text-primary pt-2 pb-3">Tackis Testimonials</p>
         <h2>What our customers have to say</h2>

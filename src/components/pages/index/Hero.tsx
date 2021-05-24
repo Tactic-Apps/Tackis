@@ -5,7 +5,10 @@ import Wave from "../../../assets/icons/wave.svg"
 
 const Hero = () => {
   return (
-    <section id="hero-banner" className="relative h-hero overflow-hidden">
+    <section
+      id="hero-banner"
+      className="relative h-screen sm:h-hero overflow-hidden"
+    >
       <StaticImage
         src="../../../assets/images/hero.jpg"
         alt="Hero image"

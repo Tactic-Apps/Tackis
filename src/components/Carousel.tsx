@@ -135,14 +135,14 @@ const Carousel = ({
   // When the touch ends then evaluate the touch start and end then do something depending on the direction. Reduce the number from 150 to 75 for higher sensitivity. Touch is disabled when there's only one slide screen.
   const handleTouchEnd = (i: number) => {
     if (children.length / responsiveSlidesToShow !== 1) {
-      if (touchStart - touchEnd > 150) {
+      if (touchStart - touchEnd > 75) {
         // do your stuff here for left swipe
         setChecked(
           `carousel-${i < 1 ? children.length / responsiveSlidesToShow : i}`
         )
       }
 
-      if (touchStart - touchEnd < -150) {
+      if (touchStart - touchEnd < -75) {
         // do your stuff here for right swipe
         setChecked(
           `carousel-${
@@ -237,7 +237,7 @@ const Carousel = ({
   }
 
   return (
-    <div className="container px-16 md:px-24 py-20">
+    <div className="container px-16 md:px-24 pb-10">
       <div className="carousel relative">
         <div className="carousel-inner relative w-full">
           {slides}

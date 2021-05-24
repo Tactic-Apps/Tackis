@@ -2,14 +2,18 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
-const Navigation = () => {
+const Navigation = ({ stickyNav }: { stickyNav: boolean }) => {
   const [showMobileLinks, setShowMobileLinks] = useState(false)
 
   const toggleMobileLinks = () => {
     setShowMobileLinks(prevState => !prevState)
   }
   return (
-    <nav className="p-5 w-full bg-gray">
+    <nav
+      className={`w-full bg-gray transition-all ${
+        stickyNav ? "fixed top-0 z-50 bg-opacity-95 py-2 px-5" : "p-5"
+      }`}
+    >
       <div className="container flex flex-wrap items-center ">
         <Link to="/" className="mr-auto">
           <StaticImage

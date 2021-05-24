@@ -5,15 +5,17 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { Waypoint } from "react-waypoint"
 
 import Header from "./header"
 import Navigation from "./Navigation"
 import Footer from "./Footer"
 
 const Layout = ({ children }) => {
+  const [stickyNav, setStickyNav] = useState(false)
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -24,10 +26,19 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const onEnterHandler = () => {
+    setStickyNav(false)
+  }
+
+  const onLeaveHandler = () => {
+    setStickyNav(true)
+  }
+
   return (
     <>
       <Header />
-      <Navigation />
+      <Navigation stickyNav={stickyNav} />
+      <Waypoint onEnter={onEnterHandler} onLeave={onLeaveHandler} />
       <main>{children}</main>
       <Footer />
     </>
