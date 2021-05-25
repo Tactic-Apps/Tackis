@@ -44,10 +44,16 @@
   .btn-ghost-light {
     @apply bg-transparent text-white border-2 border-white hover:bg-secondary hover:text-gray focus:ring-secondary-light disabled:bg-white disabled:text-secondary disabled:cursor-not-allowed;
   }
-}
 
-.slick-prev:before,
-.slick-next:before {
-  font-size: 2rem !important;
-  color: #5bc500 !important;
+  .breadcrumb__list {
+    @apply flex;
+  }
+
+  .breadcrumb__separator {
+    @apply mx-3;
+  }
+
+  .breadcrumb__link {
+    @apply text-primary hover:text-white capitalize;
+  }
 }

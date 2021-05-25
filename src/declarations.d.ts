@@ -8,5 +8,7 @@ declare module "*.svg" {
   export default content
 }
 
+declare module "gatsby-plugin-breadcrumb"
+
 // And to shim assets, use (one file extension per `declare`):
 // declare module "*.png"
