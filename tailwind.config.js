@@ -50,6 +50,10 @@ module.exports = {
       maxWidth: {
         "1/2": "50%",
       },
+      zIndex: {
+        "-10": "-10",
+        "-20": "-20",
+      },
     },
   },
   variants: {

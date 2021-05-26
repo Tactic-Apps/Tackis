@@ -34,6 +34,10 @@ const Pricing = () => {
             </li>
             <li className="flex items-center mb-5">
               <CheckIcon className="p-1 w-5 h-5 rounded-full bg-primary-light mr-2 text-white fill-current" />
+              Download large files quickly
+            </li>
+            <li className="flex items-center mb-5">
+              <CheckIcon className="p-1 w-5 h-5 rounded-full bg-primary-light mr-2 text-white fill-current" />
               Recommended for up to 10 Devices
             </li>
           </ul>
@@ -48,13 +52,9 @@ const Pricing = () => {
             alt="Pricing Background"
             placeholder="blurred"
             layout="fullWidth"
-            className="absolute top-0 left-0 w-full h-full"
-            style={{ zIndex: "-2" }}
+            className="absolute top-0 left-0 w-full h-full -z-20"
           />
-          <div
-            className="bg-primary absolute top-0 left-0 w-full h-full opacity-80"
-            style={{ zIndex: "-1" }}
-          ></div>
+          <div className="bg-primary absolute top-0 left-0 w-full h-full opacity-80 -z-10"></div>
         </div>
         <div className="relative px-8 py-12 text-white w-full ">
           <FasterIcon className="p-4 w-20 h-20 border rounded-full bg-secondary-light fill-current text-gray mb-5" />
@@ -76,6 +76,10 @@ const Pricing = () => {
             </li>
             <li className="flex items-center mb-5">
               <CheckIcon className="p-1 w-5 h-5 rounded-full bg-gray-light mr-2 text-white fill-current" />
+              Multi-device HD streaming
+            </li>
+            <li className="flex items-center mb-5">
+              <CheckIcon className="p-1 w-5 h-5 rounded-full bg-gray-light mr-2 text-white fill-current" />
               Recommended for up to 30 Devices
             </li>
           </ul>
@@ -90,8 +94,7 @@ const Pricing = () => {
             alt="Pricing Background"
             placeholder="blurred"
             layout="fullWidth"
-            className="absolute top-0 left-0 w-full h-full"
-            style={{ zIndex: "-2" }}
+            className="absolute top-0 left-0 w-full h-full -z-20"
           />
         </div>
         <div className="relative px-8 py-12 text-white w-full ">
@@ -114,6 +117,10 @@ const Pricing = () => {
             </li>
             <li className="flex items-center mb-5">
               <CheckIcon className="p-1 w-5 h-5 rounded-full bg-primary-light mr-2 text-white fill-current" />
+              Extreme Speed for Heavy Usage
+            </li>
+            <li className="flex items-center mb-5">
+              <CheckIcon className="p-1 w-5 h-5 rounded-full bg-primary-light mr-2 text-white fill-current" />
               Recommended for up to 100 Devices
             </li>
           </ul>
@@ -128,13 +135,9 @@ const Pricing = () => {
             alt="Pricing Background"
             placeholder="blurred"
             layout="fullWidth"
-            className="absolute top-0 left-0 w-full h-full"
-            style={{ zIndex: "-2" }}
+            className="absolute top-0 left-0 w-full h-full -z-20"
           />
-          <div
-            className="bg-primary absolute top-0 left-0 w-full h-full opacity-80"
-            style={{ zIndex: "-1" }}
-          ></div>
+          <div className="bg-primary absolute top-0 left-0 w-full h-full opacity-80 -z-10"></div>
         </div>
       </div>
     </section>

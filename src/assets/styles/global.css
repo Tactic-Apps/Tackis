@@ -25,7 +25,7 @@
 
 @layer components {
   .btn {
-    @apply py-3 px-6 text-sm font-bold rounded-3xl  transition-colors duration-100 font-paragraph focus:outline-none;
+    @apply py-3 px-6 text-sm font-bold rounded-3xl  transition-colors duration-300 font-paragraph focus:outline-none;
   }
 
   /*These primary colors were created in the theme in tailwind.config.js*/
