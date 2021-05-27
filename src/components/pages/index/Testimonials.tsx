@@ -61,7 +61,7 @@ const Testimonials = () => {
       name: "Lisa Adams",
       location: "North Loop",
       testimonial:
-        "You guys have definitely lived up to everything you said you would do... very refreshing these days.",
+        "It's so refreshing having a company live up to everything they claim on their website. Thanks Tackis.",
     },
     {
       image: imageQuery.chris,
@@ -69,7 +69,7 @@ const Testimonials = () => {
       name: "Chris Lao",
       location: "Cherrywood",
       testimonial:
-        "I have noticed a marked increase over speed and reliability on both computer usage and TV streaming services. Could not be more pleased.",
+        "Fiber internet has blown my mind. I have noticed a big difference in both computer usage and online streaming. Couldn't be more happy about the switch.",
     },
     {
       image: imageQuery.ron,
@@ -77,7 +77,7 @@ const Testimonials = () => {
       name: "Ron Rotman",
       location: "South Menchaca",
       testimonial:
-        "Thank you for being proactive and sending messages when you are doing system checks and things. We love having Tackis!",
+        "I really appreciate the proactive emails when Tackis will be testing their systems or doing repairs. No more surprises. We love having Tackis!",
     },
     {
       image: imageQuery.beth,
@@ -85,7 +85,7 @@ const Testimonials = () => {
       name: "Beth Meyers",
       location: "Crestview",
       testimonial:
-        "We got sick and tired of going over our monthly download limits with astronomical fees at the end of the month. Tackis gives us all the internet we want for a fraction of the price!",
+        "We got tired of going over our monthly download limits with astronomical fees at the end of the month. Tackis gives us all the internet we want for a fraction of the price!",
     },
   ]
   return (
