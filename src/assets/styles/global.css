@@ -19,7 +19,7 @@
     @apply text-gray bg-gray-100;
   }
   p {
-    @apply text-gray-light font-paragraph;
+    @apply text-gray-light font-paragraph leading-7;
   }
 }
 

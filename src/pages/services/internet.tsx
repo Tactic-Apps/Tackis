@@ -4,6 +4,8 @@ import Layout from "../../components/layout"
 import PageHero from "../../components/PageHero"
 import Pricing from "../../components/pages/index/Pricing"
 import Features from "../../components/pages/services/internet/Features"
+import Steps from "../../components/pages/services/internet/Steps"
+import Warning from "../../components/pages/services/internet/Warning"
 import Seo from "../../components/seo"
 
 const Internet = ({
@@ -22,7 +24,9 @@ const Internet = ({
       crumbLabel="Internet"
     />
     <Features />
+    <Steps />
     <Pricing />
+    <Warning />
   </Layout>
 )
 
