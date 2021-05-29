@@ -19,6 +19,7 @@ const Internet = ({
     <Seo title="Internet" />
 
     <PageHero
+      title="Internet"
       pageContext={pageContext}
       location={location}
       crumbLabel="Internet"

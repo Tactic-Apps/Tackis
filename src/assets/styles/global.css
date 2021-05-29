@@ -54,6 +54,6 @@
   }
 
   .breadcrumb__link {
-    @apply text-primary hover:text-white capitalize;
+    @apply text-secondary hover:text-white capitalize;
   }
 }

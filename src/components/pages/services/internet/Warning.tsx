@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import TrophyIcon from "../../../../assets/icons/trophy.svg"
+import QuestionIcon from "../../../../assets/icons/question.svg"
 
 const Warning = () => {
   return (
@@ -8,7 +8,7 @@ const Warning = () => {
       <div className="container py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gab-16">
           <div className="order-2 lg:order-1 px-2 lg:px-5">
-            <TrophyIcon className="fill-current inline-block text-primary-dark m-auto w-7 h-7 bg-primary-light rounded-lg p-1" />
+            <QuestionIcon className="fill-current inline-block text-primary-dark m-auto w-7 h-7 bg-primary-light rounded-lg p-1" />
             <p className="inline-block text-primary pl-2 mb-3">
               Tackis Internet
             </p>
