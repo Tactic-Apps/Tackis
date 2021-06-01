@@ -84,7 +84,7 @@ const Navigation = ({ stickyNav }: { stickyNav: boolean }) => {
               showMobileLinks ? "block" : "hidden"
             }`}
           >
-            <Link to="/services/streaming" className="hover:text-primary">
+            <Link to="/contact" className="hover:text-primary">
               Contact
             </Link>
           </li>

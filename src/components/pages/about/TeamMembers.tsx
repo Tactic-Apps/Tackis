@@ -26,7 +26,10 @@ const TeamMembers = ({ teamMembersArray }: Props) => {
       className="grid grid-cols-1 md:grid-cols-10 bg-gray-200 shadow-sm"
     >
       <div className="col-span-4 self-center  h-full">
-        <GatsbyImage image={getImage(teamMember.image)} alt={teamMember.name} />
+        <GatsbyImage
+          image={getImage(teamMember.image)!}
+          alt={teamMember.name}
+        />
       </div>
       <div className="grid-cols-1 md:col-span-6 py-4 px-5 self-center">
         <h3 className="mb-1">{teamMember.name}</h3>

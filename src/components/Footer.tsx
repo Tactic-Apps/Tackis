@@ -85,7 +85,7 @@ const Footer = () => {
             </Link>
             201 Manhattan Place, Suite 2201
             <br />
-            Springbank Hill, TX 72281 <br />
+            Cherrywood, TX 72281 <br />
           </div>
           <div className="flex mt-3">
             <FacebookIcon className="w-6 h-6 fill-current mr-3 hover:text-primary hover:cursor-pointer" />
