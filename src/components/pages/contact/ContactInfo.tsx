@@ -1,7 +1,5 @@
 import React from "react"
 
-import RightArrowIcon from "../../../assets/icons/arrow-right.svg"
-
 type ContactInfoArray = {
   /** SVG Icon component */
   Icon: any

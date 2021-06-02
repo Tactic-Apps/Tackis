@@ -7,7 +7,7 @@ import LinkedIn from "../assets/icons/linkedin.svg"
 
 const Footer = () => {
   return (
-    <section id="Footer" className="bg-gray pt-20 pb-6">
+    <footer id="Footer" className="bg-gray pt-20 pb-6">
       <div className="container grid grid-cols-2 md:grid-cols-4 gap-16 text-white">
         <div>
           <Link to="/">
@@ -46,8 +46,8 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to="/streaming" className="hover:text-primary">
-                TV & Streaming
+              <Link to="/contact" className="hover:text-primary">
+                Contact Us
               </Link>
             </li>
           </ul>
@@ -56,8 +56,8 @@ const Footer = () => {
           <h3>Resources</h3>
           <ul className="mt-5">
             <li>
-              <Link to="/blog" className="hover:text-primary">
-                Blog
+              <Link to="/news" className="hover:text-primary">
+                News
               </Link>
             </li>
             <li>
@@ -97,7 +97,7 @@ const Footer = () => {
       <p className="text-sm border-t border-gray-light mt-20 text-white text-center pt-6">
         © Copyright Tackis {new Date().getFullYear()}. All Rights Reserved.
       </p>
-    </section>
+    </footer>
   )
 }
 

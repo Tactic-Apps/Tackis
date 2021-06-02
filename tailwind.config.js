@@ -54,6 +54,9 @@ module.exports = {
         "-10": "-10",
         "-20": "-20",
       },
+      lineHeight: {
+        12: "3rem",
+      },
     },
   },
   variants: {
@@ -62,6 +65,7 @@ module.exports = {
       backgroundColor: ["disabled"],
       textColor: ["disabled"],
       cursor: ["disabled", "hover"],
+      transform: ["hover"],
     },
   },
   plugins: [
