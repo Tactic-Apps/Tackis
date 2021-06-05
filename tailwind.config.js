@@ -4,6 +4,11 @@ module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    listStyleType: {
+      none: "none",
+      square: "square",
+      roman: "upper-roman",
+    },
     extend: {
       container: {
         center: true,

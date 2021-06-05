@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  /* Remove Android highlighting taps on links.*/
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply text-gray bg-gray-100;
+  }
   h1 {
     @apply text-7xl font-bold;
   }
@@ -13,10 +20,7 @@
     @apply text-2xl font-bold;
   }
   h4 {
-    @apply text-2xl font-bold;
-  }
-  body {
-    @apply text-gray bg-gray-100;
+    @apply text-xl font-bold;
   }
   p {
     @apply text-gray-light font-paragraph leading-7;
@@ -55,5 +59,12 @@
 
   .breadcrumb__link {
     @apply text-secondary hover:text-white capitalize;
+  }
+}
+
+@layer utilities {
+  /* Handles the bottom bar on newer iPhones without the “Home” button. Without it, some elements can fall under the bar, making them unreadable and tough to tap.*/
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }

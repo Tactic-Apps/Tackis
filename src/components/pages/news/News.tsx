@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
-import Post from "./Post"
+import PostGrid from "./PostGrid"
 
 const News = () => {
   const {
@@ -73,7 +73,7 @@ const News = () => {
       alt: "Parental Controls",
       author: "Melissa Phuong",
       date: "July 1, 2020",
-      heading: "How to protect your kids from online threats.",
+      heading: "How to protect your kids online with parental controls.",
       snippet:
         "The recent shift to remote work stresses how much your team relies on reliable and secure internet. You need consistently performing internet...",
       link: "wired-vs-wireless",
@@ -113,30 +113,30 @@ const News = () => {
   return (
     <section id="News">
       <div className="container py-24">
-        <Post postsArray={posts} />
+        <PostGrid postsArray={posts} />
         <div className="flex justify-center my-10">
           <Link to="">
-            <div className="bg-white font-bold hover:bg-primary hover:text-white shadow-lg mr-3 w-12 h-12 text-center leading-12 transition-colors duration-200">
+            <div className="bg-white font-bold hover:bg-primary hover:text-white shadow-lg mr-3 w-12 h-12 text-center leading-12 transition-colors duration-300">
               &#171;
             </div>
           </Link>
           <Link to="">
-            <div className="font-bold bg-primary text-white shadow-lg mr-3 w-12 h-12 text-center leading-12 transition-colors duration-200">
+            <div className="font-bold bg-primary text-white shadow-lg mr-3 w-12 h-12 text-center leading-12 transition-colors duration-300">
               1
             </div>
           </Link>
           <Link to="">
-            <div className="bg-white font-bold hover:bg-primary hover:text-white shadow-lg mr-3 w-12 h-12 text-center leading-12 transition-colors duration-200">
+            <div className="bg-white font-bold hover:bg-primary hover:text-white shadow-lg mr-3 w-12 h-12 text-center leading-12 transition-colors duration-300">
               2
             </div>
           </Link>
           <Link to="">
-            <div className="bg-white font-bold hover:bg-primary hover:text-white shadow-lg mr-3 w-12 h-12 text-center leading-12 transition-colors duration-200">
+            <div className="bg-white font-bold hover:bg-primary hover:text-white shadow-lg mr-3 w-12 h-12 text-center leading-12 transition-colors duration-300">
               3
             </div>
           </Link>
           <Link to="">
-            <div className="bg-white font-bold hover:bg-primary hover:text-white shadow-lg mr-3 w-12 h-12 text-center leading-12 transition-colors duration-200">
+            <div className="bg-white font-bold hover:bg-primary hover:text-white shadow-lg mr-3 w-12 h-12 text-center leading-12 transition-colors duration-300">
               &#187;
             </div>
           </Link>
