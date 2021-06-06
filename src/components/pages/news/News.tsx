@@ -55,7 +55,7 @@ const News = () => {
       date: "June 1, 2020",
       heading: "Wired vs Wireless: Which one should you choose for your home?",
       snippet:
-        "The recent shift to remote work stresses how much your team relies on reliable and secure internet. You need consistently performing internet...",
+        "Wireless networking has predominantly become more popular over the past few years, with advancements in technology, wireless speeds...",
       link: "wired-vs-wireless",
     },
     {
@@ -65,7 +65,7 @@ const News = () => {
       date: "June 16, 2020",
       heading: "Ping vs Latency: What you should know as a gamer.",
       snippet:
-        "The recent shift to remote work stresses how much your team relies on reliable and secure internet. You need consistently performing internet...",
+        "No matter the network, three primary factors significantly contribute to latency; propagation delay, routing and switching, and queuing...",
       link: "wired-vs-wireless",
     },
     {
@@ -75,7 +75,7 @@ const News = () => {
       date: "July 1, 2020",
       heading: "How to protect your kids online with parental controls.",
       snippet:
-        "The recent shift to remote work stresses how much your team relies on reliable and secure internet. You need consistently performing internet...",
+        "Parents want their kids to be safe, especially on the internet. As your kids grow and indulge in online activities, you will...",
       link: "wired-vs-wireless",
     },
     {
@@ -85,7 +85,7 @@ const News = () => {
       date: "July 21, 2020",
       heading: "Tackis is expanding into Lake Austin so register today!",
       snippet:
-        "The recent shift to remote work stresses how much your team relies on reliable and secure internet. You need consistently performing internet...",
+        "Residents of Lake Austin, we have some fantastic news for you. Registration is now open to get Tackis Fiber Internet installed...",
       link: "wired-vs-wireless",
     },
     {
@@ -95,7 +95,7 @@ const News = () => {
       date: "August 2, 2020",
       heading: "How to keep your personal data safe from malware and hackers.",
       snippet:
-        "The recent shift to remote work stresses how much your team relies on reliable and secure internet. You need consistently performing internet...",
+        "Online security is becoming a complex and diverse subject as many actors join the online world. Growth in the online...",
       link: "wired-vs-wireless",
     },
     {
@@ -105,7 +105,7 @@ const News = () => {
       date: "August 17, 2020",
       heading: "Why does Tackis ask you to bring your own router?",
       snippet:
-        "The recent shift to remote work stresses how much your team relies on reliable and secure internet. You need consistently performing internet...",
+        "As a new customer to Tackis you may be confused as to whey we only install a modem and not a router for your home...",
       link: "wired-vs-wireless",
     },
   ]
