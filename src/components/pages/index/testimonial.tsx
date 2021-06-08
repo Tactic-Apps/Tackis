@@ -25,7 +25,7 @@ const testimonial = ({ testimonialData }: Props): React.ReactNodeArray => {
       >
         <div className="col-span-6 md:col-span-2 text-center mb-5 md:mb-0">
           <GatsbyImage
-            image={getImage(settings.image)}
+            image={getImage(settings.image)!}
             alt={settings.imageAlt}
             className="rounded-full m-auto"
           />

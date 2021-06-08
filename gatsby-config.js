@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/Tackis",
+  pathPrefix: "/Tackis/",
   siteMetadata: {
     title: `Tackis`,
     description: `Tackis is a Fiber Internet provider in Austin Texas with fast speeds and predictable billing.`,
@@ -24,7 +24,7 @@ module.exports = {
       options: {
         name: `Tackis`,
         short_name: `Tackis`,
-        start_url: `/`,
+        start_url: `/Tackis/`,
         background_color: `#663399`,
         theme_color: `#5bc500`,
         display: `minimal-ui`,
