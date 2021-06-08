@@ -4,7 +4,7 @@ import "../assets/styles/carousel.css"
 
 type Size = {
   /** Width of the browser window in pixels */
-  windowWidth: number | undefined
+  windowWidth: number
 }
 
 // Custom Hook to determine the window size so we can compare it to the responsive Tailwind v2 breakpoints
@@ -12,7 +12,7 @@ function useWindowSize(): Size {
   // Initialize state with undefined width/height so server and client renders match
   // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
   const [windowSize, setWindowSize] = useState<Size>({
-    windowWidth: undefined,
+    windowWidth: 0,
   })
   useEffect(() => {
     // Handler to call on window resize

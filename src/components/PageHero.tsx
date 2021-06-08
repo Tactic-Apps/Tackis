@@ -1,6 +1,7 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import { useStaticQuery, graphql } from "gatsby"
 
 const PageHero = ({
   title,
@@ -16,6 +17,16 @@ const PageHero = ({
   const {
     breadcrumb: { crumbs },
   } = pageContext
+
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          pathPrefix
+        }
+      }
+    `
+  )
 
   return (
     <section id="PageHero" className="relative overflow-hidden h-60">
@@ -36,7 +47,17 @@ const PageHero = ({
               crumbLabel={crumbLabel}
               location={location}
               hiddenCrumbs={["/services"]}
-              disableLinks={[location.pathname.toLowerCase()]}
+              disableLinks={[
+                location.pathname.endsWith("/")
+                  ? location.pathname
+                      .replace(site.pathPrefix, "")
+                      .slice(
+                        0,
+                        location.pathname.replace(site.pathPrefix, "").length -
+                          1
+                      )
+                  : location.pathname.replace(site.pathPrefix, ""),
+              ]}
             />
           </div>
         </div>

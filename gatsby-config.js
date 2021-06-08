@@ -1,10 +1,10 @@
 module.exports = {
-  pathPrefix: "/tackis",
+  pathPrefix: "/Tackis",
   siteMetadata: {
     title: `Tackis`,
     description: `Tackis is a Fiber Internet provider in Austin Texas with fast speeds and predictable billing.`,
     author: `@tacticapps`,
-    siteUrl: "https://tactic-apps.github.io/tackis/",
+    siteUrl: "https://tactic-apps.github.io",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

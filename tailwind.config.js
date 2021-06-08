@@ -1,8 +1,18 @@
 const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
+  purge: {
+    content: ["./src/**/*.{js,jsx,ts,tsx}"],
+    options: {
+      safelist: [
+        "breadcrumb__list",
+        "breadcrumb__separator",
+        "breadcrumb__link",
+      ],
+    },
+  },
   darkMode: false, // or 'media' or 'class'
+  important: true,
   theme: {
     listStyleType: {
       none: "none",

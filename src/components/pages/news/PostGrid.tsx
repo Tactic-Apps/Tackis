@@ -21,7 +21,7 @@ type Props = {
 
 const Post = ({ postsArray }: Props) => {
   let posts = postsArray.map(post => (
-    <div className="bg-white shadow-lg overflow-hidden">
+    <div key={Math.random()} className="bg-white shadow-lg overflow-hidden">
       <div className="overflow-hidden">
         <Link to={post.link}>
           <GatsbyImage

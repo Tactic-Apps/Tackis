@@ -13,7 +13,7 @@ type Props = {
 
 const Step = ({ stepsContent }: Props) => {
   let steps = stepsContent.map((step, i) => (
-    <div className="text-center p-5">
+    <div key={Math.random()} className="text-center p-5">
       <span className="inline-block border border-primary rounded-full text-primary text-5xl leading-relaxed text-center align-middle w-20 h-20 mb-5">
         {i + 1}
       </span>

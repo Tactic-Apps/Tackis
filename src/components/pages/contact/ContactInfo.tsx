@@ -15,7 +15,7 @@ type Props = {
 
 const ContactInfo = ({ contactInfoArray }: Props) => {
   let contactBoxes = contactInfoArray.map(contactInfo => (
-    <a href="">
+    <a key={Math.random()} href="">
       <div
         key={contactInfo.heading}
         className="bg-white shadow-xl py-7 px-7 xl:px-16 transition-colors border-2 border-white hover:border-primary-light"
